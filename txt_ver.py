@@ -79,4 +79,3 @@ for d in os.listdir(txt_root):
             pause = False
 
     # print(get_txt[1][0])
-nn
