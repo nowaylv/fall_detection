@@ -2,8 +2,8 @@ import json
 import os
 import cv2 as cv
 import sys
-tag_root = f'C:/Users/18459/Desktop/ai/fall_dataset/lihongan/outputs'
-data_root = f'C:/Users/18459/Desktop/ai/fall_dataset/lihongan/data'
+tag_root = f'C:/Users/18459/Desktop/ai/fall_dataset/noway/outputs'
+data_root = f'C:/Users/18459/Desktop/ai/fall_dataset/noway/img'
 
 cls_list = ['stand', 'fall']
 color_list = [(255,0,0), (0,0,255)]
