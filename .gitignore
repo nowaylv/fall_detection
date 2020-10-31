@@ -23,7 +23,6 @@
 !cfg/yolov3*.cfg
 
 storage.googleapis.com
-runs/*
 !data/samples/zidane.jpg
 !data/samples/bus.jpg
 !data/coco.names
