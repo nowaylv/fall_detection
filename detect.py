@@ -16,7 +16,6 @@ from utils.general import (
     xyxy2xywh, plot_one_box, strip_optimizer, set_logging)
 from utils.torch_utils import select_device, load_classifier, time_synchronized, prune, sparsity
 
-
 def detect(save_img=False):
     out, source, weights, view_img, save_txt, imgsz = \
         opt.save_dir, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
