@@ -7,7 +7,7 @@ import glob
 import re
 import cv2 as cv
 from tqdm import tqdm
-import timen
+import time
 import string 
 import math
 
@@ -15,8 +15,8 @@ cls_list = ['stand', 'fall']
 color_list = [(255,0,0), (0,0,255)]
 
 tag_root = f'C:/Users/18459/Desktop/ai/fall_dataset/lian1/outputs'
-data_root = f'C:/Users/18459/Desktop/ai/fall_dataset/img'
-txt_root = f'./txt'
+data_root = f'./LHA/images/fall'
+txt_root = f'./LHA/labels/fall'
 
 class get_regr_tag(Dataset):
     def __init__(self, *root, type = 'txt', col_start = 0, col_stop = 6, line_start = 2):
@@ -52,7 +52,7 @@ class get_regr_tag(Dataset):
 for d in os.listdir(txt_root): 
     pause = True
     img_root = f'{data_root}/{d[:-4]}.jpg'
-    get_txt = get_regr_tag(f'./txt/{d}')
+    get_txt = get_regr_tag(f'./{txt_root}/{d}')
     img = cv.imread(img_root)
     h = len(img)
     w = len(img[0])
