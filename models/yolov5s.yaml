@@ -5,10 +5,10 @@ width_multiple: 0.50  # layer channel multiple
 
 # anchors
 anchors:
-  - [59,147, 77,236, 153,192]  # P3/8
-  - [114,380, 87,300, 172,375]  # P4/16
-  - [453,203, 259,176, 270,310]  # P5/32
-  
+  - [28,59, 63,134, 72,209]  # P3/8
+  - [133,203, 246,177, 92,293]  # P4/16
+  - [139,332, 247,322, 434,283]  # P5/32
+
 # YOLOv5 backbone
 backbone:
   # [from, number, module, args]
