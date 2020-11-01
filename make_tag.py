@@ -4,8 +4,11 @@ import cv2 as cv
 import sys
 
 class make_txt():
-    def __init__(self, root = f"./txt", name = "demo"):
-        self.file = open(f"{root}/{name}.txt", mode = "w")
+    def __init__(self, suffix = False, root = f"./falldata/labels/train", name = "demo"):
+        if suffix == False:
+            self.file = open(f"{root}/{name}.txt", mode = "w")
+        else:
+            self.file = open(f"{root}/{name}", mode = "w")
     
     def write(self, text):
         for data in text:

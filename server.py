@@ -70,13 +70,14 @@ def load_file():
     # img_np /= 255.0  # 0 - 255 to 0.0 - 1.0
     if img_t.ndimension() == 3:
         img_t = img_t.unsqueeze(0)
-
+    print(img_t.shape)    
     pred = model(img_t, augment=False)[0]
-
+    print(pred.shape)
     # Apply NMS
     #--------------------------------conf--iou--------------------------------
     pred = non_max_suppression(pred, 0.25, 0.45, classes=None, agnostic=True)
     pred = torch.stack(pred, dim = 0)
+    print(pred.shape)
     if pred[:, :, -1].sum() > 0.5:
         return 'fall'
     else:
