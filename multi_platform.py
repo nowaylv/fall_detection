@@ -12,7 +12,9 @@ from utils.general import (
 
 trans = transforms.ToTensor()
 img = Image.open(f'./no.jpg')
-img_l = trans(img).unsqueeze(0).tolist()
+img_l = trans(img).unsqueeze(0).numpy()
+img_n = img_l[0].transpose(1, 2, 0)[:,:,::-1]   
+
 # img_np = letterbox(img, new_shape=640)[0]
 # # cv.imwrite(f'./no.jpg', img_np)
 # img_np = img_np[:, :, ::-1].transpose(2, 0, 1)
@@ -24,7 +26,7 @@ img_l = trans(img).unsqueeze(0).tolist()
 ort_session = onnxruntime.InferenceSession("./runs/exp0/weights/best.onnx")
 
 ort_input = {ort_session.get_inputs()[0].name: img_l}
-print(ort_session.get_outputs()[0].name)
+print(ort_session.get_inputs()[0].name)
 ort_output = ort_session.run(None, ort_input)
 img_out_y = ort_output[0]
 print(img_out_y.shape),exit()

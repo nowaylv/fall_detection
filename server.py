@@ -3,29 +3,17 @@ import io
 from PIL import Image
 import cv2 as cv
 import torch
-from torchvision import transforms
-from detect import detect
-
-import argparse
-import os
-import shutil
-import time
-from pathlib import Path
+import numpy as np
 
 import cv2
 import torch
 import torch.backends.cudnn as cudnn
-from numpy import random
-import numpy as np
 
 from models.experimental import attempt_load
 from utils.datasets import LoadStreams, LoadImages, letterbox
-from utils.general import (
-    check_img_size, non_max_suppression, apply_classifier, scale_coords,
-    xyxy2xywh, plot_one_box, strip_optimizer, set_logging)
-from utils.torch_utils import select_device, load_classifier, time_synchronized, prune, sparsity
+from utils.general import non_max_suppression
 
-trans = transforms.ToTensor()
+# trans = transforms.ToTensor()
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 cls_list = ['stand', 'fall']
