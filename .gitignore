@@ -17,6 +17,9 @@
 *.MOV
 *.avi
 *.data
+*.pt
+*.zip
+*.jpg
 *.json
 
 *.cfg

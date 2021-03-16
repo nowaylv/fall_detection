@@ -18,7 +18,7 @@ from utils.general import (
 from utils.torch_utils import select_device, time_synchronized
 from utils import torch_utils
 
-
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 def test(data,
          weights=None,
          batch_size=16,
